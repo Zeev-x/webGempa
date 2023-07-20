@@ -3,6 +3,9 @@ const readline = require("readline").createInterface({
   output : process.stdout });
 const http = require("http");
 const bmkg = require("zeev-gempa");
+const wm = require("./package.json");
+const waterMark = wm.author;
+const github = wm.github;
 
 bmkg.then(data => {
   var waktu = data.waktu;
@@ -40,7 +43,7 @@ bmkg.then(data => {
                     <p>Kedalaman : ${kedalaman}</p>
                     <p>Wilayah : ${wilayah}</p><hr>
                     <div class="waterMark" align="center">
-                      <h6>©Copyright Zeev-x 2023</h6>
+                      <h6>©Copyright <a href="${github}">${waterMark}</a> 2023</h6>
                     </div>
                   </fieldset>
                   <style>
