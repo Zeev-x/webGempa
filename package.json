@@ -21,5 +21,6 @@
   "bugs": {
     "url": "https://github.com/Zeev-x/webGempa/issues"
   },
-  "homepage": "https://github.com/Zeev-x/webGempa#readme"
+  "homepage": "https://github.com/Zeev-x/webGempa#readme",
+  "github": "https://github.com/Zeev-x"
 }
