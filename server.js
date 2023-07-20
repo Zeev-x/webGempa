@@ -79,5 +79,6 @@ bmkg.then(data => {
       res.end();
     }).listen(port);
     console.log("Website runing on port http://localhost:"+port);
+    readline.close();
   });
 });
