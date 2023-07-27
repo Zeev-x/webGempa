@@ -1,11 +1,9 @@
-const readline = require("readline").createInterface({
-  input : process.stdin,
-  output : process.stdout });
 const http = require("http");
 const bmkg = require("zeev-gempa");
 const wm = require("./package.json");
 const waterMark = wm.author;
 const github = wm.github;
+const port = process.env.PORT;
 
 bmkg.then(data => {
   var waktu = data.waktu;
@@ -15,7 +13,7 @@ bmkg.then(data => {
   var kedalaman = data.kedalaman;
   var wilayah = data.wilayah;
   var map = data.map;
-  readline.question("Insert port : ",port => {
+  
     http.createServer(function(req,res){
       res.writeHead(200,{"Content-Type" : "text/html"});
       var html = `
@@ -78,7 +76,5 @@ bmkg.then(data => {
       res.write(html);
       res.end();
     }).listen(port);
-    console.log("Website runing on port http://localhost:"+port);
-    readline.close();
-  });
+    console.log("Website runing on port http://localhost:"+port)
 });
